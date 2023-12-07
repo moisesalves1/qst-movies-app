@@ -1,1 +1,14 @@
-<p>list-movies works!</p>
+<div class="d-flex justify-content-between mb-4">
+    <h3 class="mb-3">Movies</h3>
+    <div>
+        <select class="form-select" [(ngModel)]="selectedOrder" (change)="teste()">
+            <option disabled selected>Order by</option>
+            <option value="Title">Name</option>
+            <option value="ReleasedDate">Released Date</option>
+        </select>
+    </div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <app-movie-card *ngFor="let item of moviesList" [movie]="item"></app-movie-card>
+</div>
